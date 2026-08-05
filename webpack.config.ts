@@ -3,7 +3,7 @@ import { buildWebpackConfig } from "./config/build/buildWebpackConfig";
 import { BuildEnv, BuildPaths } from "./config/build/types/config";
 
 const paths: BuildPaths = {
-  entry: "./src/index.ts",
+  entry: "./src/index.tsx",
   build: path.resolve(__dirname, "dist"),
   html: path.resolve(__dirname, "public", "index.html")
 }
