@@ -1,0 +1,27 @@
+.themeButton{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  cursor: pointer;
+  color: var(--text-primary-color);
+  transition: transform 0.2s ease, background 0.2s ease;
+
+  &:active{
+    transform: scale(0.9);
+  }
+
+  &:hover{
+    background: var(--surface-color);
+  }
+}
+
+
+.themeButton svg {
+  width: 18px;
+  height: 18px;
+}

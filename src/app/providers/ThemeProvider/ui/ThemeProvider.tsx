@@ -1,7 +1,9 @@
-import { Theme } from "app/App";
 import { ReactNode, useMemo, useState } from "react";
 import { LOCAL_STORAGE_THEME_KEY, ThemeContext } from "../lib/ThemeContext";
-
+export enum Theme {
+  LIGHT = 'light',
+  DARK = 'dark',
+}
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.DARK
 interface ThemeProviderProps {
   children: ReactNode;
