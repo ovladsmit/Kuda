@@ -8,7 +8,10 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "types": ["node"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "*":["./src/*"]
+    }
   },
   "include": ["src/**/*", "config/**/*", "*.ts"],
   "exclude": ["node_modules"],
