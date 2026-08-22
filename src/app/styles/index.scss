@@ -3,6 +3,10 @@
 @use "themes/dark";
 @use "themes/light";
 
+body{
+  color: var(--text-primary-color);
+  font: var(--font-m);
+}
 .app {
   background: var(--bg-color);
   color: var(--text-primary-color);
