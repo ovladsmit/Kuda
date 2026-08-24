@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import { App } from './app/App';
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "app/providers/ThemeProvider";
+import { ErrorBoundary } from "app/providers/ErrorBoundary";
 const rootElement = document.getElementById("root");
 
 if (!rootElement) {
@@ -14,10 +15,11 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ThemeProvider>
+    
+      <ThemeProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
   </React.StrictMode>
 );
