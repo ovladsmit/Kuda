@@ -1,16 +1,14 @@
 // .storybook/preview.ts
-import "../src/app/styles/index.scss";
+
 
 import type { Preview } from "@storybook/react";
+import { StyleDecorator } from "./decorators/StyleDecorator";
+import { ThemeDecorator } from "./decorators/ThemeDecorator";
+import { Theme } from "../src/app/providers/ThemeProvider";
+import { RouterDecorator } from "./decorators/RouterDecorator";
 
 const preview: Preview = {
   parameters: {
-    backgrounds: {
-      options: {
-        dark: { name: "dark", value: "#2B1B2E" },
-        light: { name: "light", value: "#FAF5F0" },
-      },
-    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -18,9 +16,7 @@ const preview: Preview = {
       },
     },
   },
-  initialGlobals: {
-    backgrounds: { value: "dark" },
-  },
+  decorators: [StyleDecorator, ThemeDecorator(Theme.DARK), RouterDecorator]
 };
 
 export default preview;

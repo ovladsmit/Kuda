@@ -9,7 +9,7 @@ const meta: Meta<typeof OptionCard> = {
   },
   decorators: [
     (Story) => (
-      <div className="app dark" style={{ minHeight: "auto", height: "auto" }}>
+      <div style={{ minHeight: "auto", height: "auto" }}>
         <Story />
       </div>
     ),

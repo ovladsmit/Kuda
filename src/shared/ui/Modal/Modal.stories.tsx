@@ -7,7 +7,7 @@ const meta = {
   tags: ['autodocs'],
   decorators: [
     (Story) => (
-      <div className="app dark" style={{ minHeight: '100vh' }}>
+      <div style={{ minHeight: '100vh' }}>
         <Story />
         <div id="modal-root" />
       </div>
