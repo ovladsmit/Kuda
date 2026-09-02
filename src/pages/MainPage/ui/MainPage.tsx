@@ -1,3 +1,4 @@
+import { Input } from "shared/ui";
 const MainPage = () => {
   return (
     <div>

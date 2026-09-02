@@ -13,7 +13,7 @@ const config: StorybookConfig = {
   framework: "@storybook/react-webpack5",
 
   typescript: {
-    reactDocgen: false,
+    reactDocgen: "react-docgen-typescript",
   },
 
   webpackFinal: async (config) => {
