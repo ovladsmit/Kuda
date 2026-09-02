@@ -19,7 +19,14 @@
 
 .buttons {
   display: flex;
-  gap: var(--space-6);
+  gap: var(--space-8);
+}
+
+
+.rigthGroop{
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .nav {
