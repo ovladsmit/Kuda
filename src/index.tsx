@@ -5,6 +5,7 @@ import { App } from './app/App';
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "app/providers/ThemeProvider";
 import { ErrorBoundary } from "app/providers/ErrorBoundary";
+import { StoreProvider } from "app/providers/StoreProvider";
 const rootElement = document.getElementById("root");
 
 if (!rootElement) {
@@ -15,11 +16,14 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    
-      <ThemeProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </ThemeProvider>
+    <StoreProvider>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ThemeProvider>
+      </ErrorBoundary>
+    </StoreProvider>
   </React.StrictMode>
 );

@@ -5,6 +5,8 @@ import { Link, NavLink } from "react-router-dom";
 import { ROUTES } from "shared/config/routes";
 import { ThemeToggleButton } from "features/ThemeToggleButton";
 import { Button } from "shared/ui";
+import { useState } from "react";
+import { LoginModal } from "features/AuthByUsername";
 interface NavbarProps {
   /*Доп классы*/
   className?: string;
@@ -14,6 +16,14 @@ interface NavbarProps {
 export const Navbar = (props: NavbarProps) => {
   const { className } = props
   const { theme, toogleTheme } = useTheme()
+  const [isOpenModal, setIsOpenModal] = useState(false)
+  const handleOpenModal = () => {
+    setIsOpenModal(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsOpenModal(false)
+  }
   return (
     <header className={clsx(className, styles.navbar, theme)}>
 
@@ -26,9 +36,9 @@ export const Navbar = (props: NavbarProps) => {
       </div>
       <div className={styles.rigthGroop}>
         <ThemeToggleButton onClick={toogleTheme} />
-        <Button className={styles.authButton}>Войти</Button>
+        <Button onClick ={handleOpenModal} className={styles.authButton}>Войти</Button>
       </div>
-
+      <LoginModal isOpen={isOpenModal} onClose={handleCloseModal}/>
 
     </header>
   );

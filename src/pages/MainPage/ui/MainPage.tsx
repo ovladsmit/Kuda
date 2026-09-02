@@ -1,11 +1,12 @@
 import { Button } from "shared/ui";
+import { LoginForm } from "features/AuthByUsername/ui/LoginForm/LoginForm";
 const MainPage = () => {
   return (
     <div>
       Main
-      <Button> Привет</Button>
+      <LoginForm />
     </div>
-     
+
   );
 };
 

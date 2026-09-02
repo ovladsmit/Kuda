@@ -1,0 +1,26 @@
+.loginForm{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: var(--space-8);
+}
+
+.submitBtn{
+  align-self: end;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font: var(--font-l);
+  font-family: var(--font-family-accent);
+  color: var(--text-primary-color);
+  margin-bottom: var(--space-2);
+}
