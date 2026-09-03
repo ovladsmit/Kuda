@@ -6,6 +6,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
 import { getLoginState } from 'features/AuthByUsername/model/selectors/getLoginState';
+import { loginByEmail } from 'features/AuthByUsername/model/services/loginByEmail';
+import { AppDispatch } from 'app/providers/StoreProvider/config/store';
 interface LoginFormProps {
   /*Доп классы*/
   className?: string;
@@ -13,10 +15,11 @@ interface LoginFormProps {
 }
 
 export const LoginForm = ({ className }: LoginFormProps) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch<AppDispatch>()
   const loginForm = useSelector(getLoginState)
   const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
+    dispatch(loginByEmail({ username: loginForm.username, password: loginForm.password }))
   }
 
   const onChangeUsername = (value: string) => {
@@ -39,7 +42,7 @@ export const LoginForm = ({ className }: LoginFormProps) => {
           Пароль
           <Input value={loginForm.password} placeholder='Введите пароль' onChange={onChangePassword} />
         </label>
-        <Button type='submit' className={styles.submitBtn}>
+        <Button disabled={loginForm.isLoading}type='submit' className={styles.submitBtn}>
           Войти
         </Button>
       </div>
