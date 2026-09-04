@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { LoginSchema } from "../types/loginSchema";
+import { AuthMode, LoginSchema } from "../types/loginSchema";
 import { loginByEmail } from "../services/loginByEmail";
 import { registerByEmail } from "../services/registredByEmail";
 const initialState: LoginSchema = {
@@ -7,6 +7,7 @@ const initialState: LoginSchema = {
   username: "",
   password: "",
   error: null,
+  mode: "login",
 };
 
 export const loginSlice = createSlice({
@@ -19,7 +20,10 @@ export const loginSlice = createSlice({
     setPassword: (state, action: PayloadAction<string>) => {
       state.password = action.payload;
     },
-
+    setMode: (state, action: PayloadAction<AuthMode>) => {
+      state.mode = action.payload;
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -29,8 +33,8 @@ export const loginSlice = createSlice({
       })
       .addCase(loginByEmail.fulfilled, (state) => {
         state.isLoading = false;
-        state.username = '';
-        state.password = '';
+        state.username = "";
+        state.password = "";
       })
       .addCase(loginByEmail.rejected, (state, action) => {
         state.isLoading = false;

@@ -9,10 +9,11 @@
   padding: var(--space-8);
 }
 
-.submitBtn{
-  align-self: end;
+.formBtn{
+  display: flex;
+  justify-content: end;
+  gap: 20px;
 }
-
 .form{
   display: flex;
   flex-direction: column;
