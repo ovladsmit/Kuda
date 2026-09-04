@@ -1,11 +1,13 @@
 .app.dark {
   --bg-color: #2B1B2E;
-  //для фона любых элементов, которые визуально лежат поверх основного фона страницы
+
+  // для фона любых элементов, которые визуально лежат поверх основного фона страницы
   --surface-color: #3A2540;
   --text-primary-color: #F5EDE4;
   --text-secondary-color: #9C7A85;
-  --border-color: rgba(245, 237, 228, 0.1);
+  --border-color: rgb(245 237 228 / 10%);
   --accent-color: #D4AF6A;
-  //цвет оверлея модалки
-  --overlay-color: rgba(0, 0, 0, 0.6);
+
+  // цвет оверлея модалки
+  --overlay-color: rgb(0 0 0 / 60%);
 }

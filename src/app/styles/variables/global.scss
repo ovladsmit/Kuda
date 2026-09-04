@@ -1,7 +1,7 @@
 :root {
-  /*Виды шрифтов*/
-  --font-family-accent: 'Fraunces', serif; //Акцентный шрифт
-  --font-family-body: 'Inter', sans-serif; //Обычный шрифт
+  /* Виды шрифтов */
+  --font-family-accent: 'Fraunces', serif; // Акцентный шрифт
+  --font-family-body: 'Inter', sans-serif; // Обычный шрифт
 
   /* Отступы */
   --space-1: 4px;
@@ -14,20 +14,16 @@
   /* Размеры шрифтов + line-height по каждой ступени шкалы */
   --font-size-xs: 12px;
   --font-line-xs: 16px;
-
   --font-size-s: 14px;
   --font-line-s: 20px;
-
   --font-size-m: 16px;
   --font-line-m: 24px;
-
   --font-size-l: 20px;
   --font-line-l: 28px;
-
   --font-size-xl: 28px;
   --font-line-xl: 34px;
 
-  /*шорткаты */
+  /* шорткаты */
   --font-xs: var(--font-size-xs) / var(--font-line-xs) var(--font-family-body);
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-body);
   --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-body);

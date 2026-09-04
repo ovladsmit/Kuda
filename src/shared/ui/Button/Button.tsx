@@ -23,8 +23,7 @@ export const Button = ({ className, children, theme = ThemeButton.PRIMARY, disab
       (className,
         styles.button,
         styles[theme],
-        { [styles.disabled]: disabled }
-      )}
+        { [styles.disabled]: disabled })}
       {...otherProps}
     >
       {children}

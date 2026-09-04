@@ -8,7 +8,7 @@ import { subscribeToAuthChanges } from "entities/User/api/UserApi";
 import { useDispatch } from "react-redux";
 import { userActions } from "entities/User";
 export const App = () => {
-  const { theme, toogleTheme } = useTheme()
+  const { theme } = useTheme()
   const dispatch = useDispatch()
   useEffect(() => {
     subscribeToAuthChanges((user) => {

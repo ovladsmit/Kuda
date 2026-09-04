@@ -7,10 +7,8 @@ import { ThemeToggleButton } from "features/ThemeToggleButton";
 import { Button } from "shared/ui";
 import { useEffect, useState } from "react";
 import { LoginModal } from "features/AuthByUsername";
-import { useDispatch, useSelector } from "react-redux";
-import { getLoginState } from "features/AuthByUsername";
+import { useSelector } from "react-redux";
 import { getUserAuthData } from "entities/User";
-import { userActions } from "entities/User";
 import { signOut } from "firebase/auth";
 import { auth } from "shared/api/firebase";
 interface NavbarProps {
@@ -24,15 +22,14 @@ export const Navbar = (props: NavbarProps) => {
   const { theme, toogleTheme } = useTheme()
   const [isOpenModal, setIsOpenModal] = useState(false)
   const authData = useSelector(getUserAuthData);
-  const dispath = useDispatch()
 
   useEffect(() => {
-    if(authData) {
+    if (authData) {
       setIsOpenModal(false)
     }
   }, [authData])
 
-  
+
   const handleOpenModal = () => {
     setIsOpenModal(true)
   }
@@ -40,7 +37,7 @@ export const Navbar = (props: NavbarProps) => {
   const handleCloseModal = () => {
     setIsOpenModal(false)
   }
-   const logoutUser = async () => {
+  const logoutUser = async () => {
     await signOut(auth);
   };
 

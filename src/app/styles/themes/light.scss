@@ -1,11 +1,13 @@
 .app.light {
   --bg-color: #FAF5F0;
-  //для фона любых элементов, которые визуально лежат поверх основного фона страницы
-  --surface-color: #FFFFFF;
+
+  // для фона любых элементов, которые визуально лежат поверх основного фона страницы
+  --surface-color: #FFF;
   --text-primary-color: #2B1B2E;
   --text-secondary-color: #7A6169;
-  --border-color: rgba(43, 27, 46, 0.08);
+  --border-color: rgb(43 27 46 / 8%);
   --accent-color: #B8903F;
-  //цвет оверлея модалки
-  --overlay-color: rgba(43, 27, 46, 0.6);
+
+  // цвет оверлея модалки
+  --overlay-color: rgb(43 27 46 / 60%);
 }
